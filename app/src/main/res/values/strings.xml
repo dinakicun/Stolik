@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Stolik</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time">Select Time</string>
+    <string name="select_guests">Select Guests</string>
+</resources>
