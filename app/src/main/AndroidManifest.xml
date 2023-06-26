@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Stolik"
         tools:targetApi="31">
         <activity
+            android:name=".Tables"
+            android:exported="false" />
+        <activity
             android:name=".Restaraunt"
             android:exported="false" />
         <activity
