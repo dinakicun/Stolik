@@ -9,6 +9,7 @@
         android:id="@+id/imageView4"
         android:layout_width="115dp"
         android:layout_height="100dp"
+        android:clickable="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"

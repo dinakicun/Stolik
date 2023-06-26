@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             >
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/restaurantImageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
@@ -30,7 +30,7 @@
                 android:layout_marginTop="220dp"
                 >
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/restaurantNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="На крыше"
@@ -40,7 +40,7 @@
                     android:layout_marginTop="20dp"
                     />
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/restaurantDescriptionTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Лофт-ресторан На Крыше — это винный бар и гастропаб, где вы можете приятно провести время с друзьями или просто по-настоящему расслабиться после рабочих будней — и в этом вам с радостью помогут наши первоклассные бармены и ассортимент спиртного."
@@ -118,6 +118,7 @@
             android:textColor="@color/white">
         </TextView>
         <TextView
+            android:id="@+id/tableName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="А1"
@@ -140,6 +141,7 @@
         android:textColor="#C8C8C8">
     </TextView>
     <TextView
+        android:id="@+id/tableType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="У окна"
@@ -161,6 +163,7 @@
             android:textColor="#C8C8C8">
         </TextView>
         <TextView
+            android:id="@+id/tableCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2"

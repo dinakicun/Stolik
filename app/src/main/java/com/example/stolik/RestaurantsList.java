@@ -22,8 +22,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
+import  com.example.stolik.RestaurantClickListener;
 
-public class RestaurantsList extends AppCompatActivity {
+public class RestaurantsList extends AppCompatActivity implements RestaurantClickListener{
 
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
@@ -54,6 +55,7 @@ public class RestaurantsList extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
                 // Ничего не делаем после изменения текста
             }
+
         });
 
         // Получаем данные из базы данных Firebase
@@ -76,7 +78,6 @@ public class RestaurantsList extends AppCompatActivity {
             }
         });
     }
-
     private void addRestaurantToLayout(Restaurant restaurant) {
         GridLayout gridLayout = findViewById(R.id.gridLayout);
 
@@ -111,11 +112,14 @@ public class RestaurantsList extends AppCompatActivity {
         }).addOnFailureListener(exception -> {
             // Обработка ошибок при загрузке изображения
         });
-
+        // Устанавливаем слушатель нажатия на контейнер ресторана
+        restaurantView.setOnClickListener(v -> {
+            // Вызываем метод обработки нажатия на ресторан
+            onRestaurantClick(restaurant);
+        });
         // Добавляем представление ресторана в GridLayout
         gridLayout.addView(restaurantView);
     }
-
 
 
 
@@ -146,5 +150,14 @@ public class RestaurantsList extends AppCompatActivity {
                 // Обработка ошибок при чтении данных из базы данных Firebase
             }
         });
+    }
+    @Override
+    public void onRestaurantClick(Restaurant restaurant) {
+        // Ваш код обработки нажатия на ресторан
+        // Здесь вы можете открыть активность Tables и передать выбранный ресторан
+        // Например:
+        Intent intent = new Intent(RestaurantsList.this, Tables.class);
+        intent.putExtra("restaurant", restaurant);
+        startActivity(intent);
     }
 }
