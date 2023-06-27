@@ -35,6 +35,9 @@ public class RestaurantsList extends AppCompatActivity implements RestaurantClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restaurants_list);
 
+        findViewById(R.id.imageButton4).setOnClickListener(v -> {
+            startActivity(new Intent(this, MyTables.class));
+        });
         databaseReference = FirebaseDatabase.getInstance().getReference("Restaurants");
         storageReference = FirebaseStorage.getInstance().getReference();
 
@@ -153,9 +156,6 @@ public class RestaurantsList extends AppCompatActivity implements RestaurantClic
     }
     @Override
     public void onRestaurantClick(Restaurant restaurant) {
-        // Ваш код обработки нажатия на ресторан
-        // Здесь вы можете открыть активность Tables и передать выбранный ресторан
-        // Например:
         Intent intent = new Intent(RestaurantsList.this, Tables.class);
         intent.putExtra("restaurant", restaurant);
         startActivity(intent);

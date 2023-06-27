@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String userPhoneNumber;
     private EditText loginEditText, passwordEditText;
 
     @Override
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                             if (user.getPassword().equals(password)) {
                                 // Правильный пароль
                                 Toast.makeText(MainActivity.this, "Вход выполнен", Toast.LENGTH_SHORT).show();
+                                userPhoneNumber = user.getPhoneNumber();
                                 startActivity(new Intent(MainActivity.this, RestaurantsList.class));
                                 finish();
                             } else {
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                         // Пользователь не существует в базе данных
                         Toast.makeText(MainActivity.this, "Такого пользователя не существует", Toast.LENGTH_SHORT).show();
                     }
+
                 }
 
                 @Override

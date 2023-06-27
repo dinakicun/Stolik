@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            app:srcCompat="@drawable/photo_restaurant"
+            app:srcCompat="@drawable/photo_restaurant2"
             android:layout_alignParentTop="true"/>
 
         <LinearLayout
